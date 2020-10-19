@@ -1,0 +1,62 @@
+Film "image" 
+        "integer xresolution" [ 320 ]
+        "integer yresolution" [ 320 ]
+        "string filename" [ "suzanne_glint_rx0p6_ry0p6_lmd15_mra0p01.png" ]
+	
+LookAt  0 0 8
+        0 0 0
+        0 1 0
+	
+Camera "perspective"
+        "float fov" [ 50 ]
+
+Sampler "stratified" 
+        "integer xsamples" 1
+        "integer ysamples" 1
+        "bool jitter" "false"
+PixelFilter "box"
+Integrator "directlighting"
+	   #"integer pixelbounds" [160 161 160 161]
+
+WorldBegin
+
+AttributeBegin
+  Translate 0 0 8
+  LightSource "point" "rgb I" [ 100 100 100 ]
+AttributeEnd
+
+Texture "dictionary" "spectrum" "imagemap"
+  "string filename" "./textures/dict_16_192_64_0p5_0p2.exr"
+  "string wrap" "clamp"
+  "float uscale" [1] "float vscale" [1]
+
+MakeNamedMaterial "glint"
+  "string type" ["sparkling"]
+  "float alpha_x" [0.6]
+  "float alpha_y" [0.6]
+  "float logmicrofacetdensity" [15]
+  "float densityrandomisation" [2.]
+  "float microfacetrelativearea" [0.01]
+  "integer N" [192]
+  "integer nlevels" [16]
+  "float alpha_dict" [0.5]
+  #"rgb R" [0.3 0.3 0.3]
+  "texture dictionary" "dictionary"
+  "bool fresnelnoop" "true"
+
+MakeNamedMaterial "MatDiffuse"
+  "string type" ["matte"]
+  "rgb Kd" [0. 0.8 0.]
+
+MakeNamedMaterial "MatMix"
+  "string type" ["mix"]
+  "string namedmaterial1" "glint"
+  "string namedmaterial2" "MatDiffuse"
+
+AttributeBegin
+  Translate 0 0.25 0
+  NamedMaterial "MatMix"
+  Include "suzanne_mesh.pbrt"
+AttributeEnd
+
+WorldEnd
