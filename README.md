@@ -1,3 +1,42 @@
+Procedural Physically based BRDF for Real-Time Rendering of Glints, pbrt-v3
+===========================================================================
+
+`pbrt-v3` implementation of the paper: **Procedural Physically based BRDF for
+Real-Time Rendering of Glints**.
+
+[Xavier Chermain](http://igg.unistra.fr/People/chermain/)
+([ICUBE](https://icube.unistra.fr/en/)), 
+[Basile Sauvage](https://igg.icube.unistra.fr/index.php/Basile_Sauvage)
+([ICUBE](https://icube.unistra.fr/en/)), 
+[Jean-Michel Dishler](https://dpt-info.u-strasbg.fr/~dischler/)
+([ICUBE](https://icube.unistra.fr/en/)) and 
+[Carsten Dachsbacher](https://cg.ivd.kit.edu/english/dachsbacher/)
+([KIT](https://www.kit.edu/english/index.php)).
+
+Accepted for [Pacific Graphic 2020](https://pg2020.org/) and for CGF special issue.
+
+* [Project page](http://igg.unistra.fr/People/chermain/real_time_glint/)
+* [Paper](http://igg.unistra.fr/People/chermain/assets/pdf/Chermain2020Procedural.pdf)
+* [Video](http://igg.unistra.fr/People/chermain/assets/avi/Chermain2020ProceduralVideo.mp4)
+* [OpenGL] (https://github.com/ASTex-ICube/real_time_glint)
+* [WebGL](http://igg.unistra.fr/People/reproctex/Demos/Real_Time_Glint/) (thanks to [Sylvain Thery](https://igg.icube.unistra.fr/index.php/Sylvain_Thery) for the WebGL implementation)
+* [Shadertoy](https://www.shadertoy.com/view/wstcRH)
+* [Bibtex](http://igg.unistra.fr/People/chermain/assets/Chermain2020ProceduralBibtex.txt)
+
+See <https://github.com/ASTex-ICube/real_time_glint_dictgenerator> to know how to
+generate the dictionary used by the renderer.
+
+A high level speudo code is available in the appendix of the paper.
+
+The files are organized as follows:
+
+* `src/materials/sparkling.*`: implementation of the material and the BRDF
+* `scenes`: contain three example scenes
+  * `textures/dict_16_192_64_0p5_0p2.exr`: the dictionary used in the paper,
+  * `suzanne_glint*.pbrt`: scenes using our glinty BRDF.
+
+The following is the `README.md` of pbrt-v3.
+
 pbrt, Version 3
 ===============
 
