@@ -1,4 +1,5 @@
 pbrt example scene
 ==================
 
-This file contains a three example scenes which use our procedural glinty BRDF.
+This folder contains three example scenes which use our procedural glinty BRDF
+with different parameters.
