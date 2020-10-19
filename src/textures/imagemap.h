@@ -92,6 +92,11 @@ class ImageTexture : public Texture<Treturn> {
         convertOut(mem, &ret);
         return ret;
     }
+    Tmemory Texel(int level, int s, int t) const {
+        return mipmap->Texel(level, s, t);
+    }
+    int Height() const { return mipmap->Height(); }
+    int Width() const { return mipmap->Width(); }
 
   private:
     // ImageTexture Private Methods
