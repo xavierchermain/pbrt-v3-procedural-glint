@@ -31,7 +31,7 @@ A high level speudo code is available in the appendix of the paper.
 The files are organized as follows:
 
 * `src/materials/sparkling.*`: implementation of the material and the BRDF
-* `scenes`: contain three example scenes
+* `scenes`: contains three example scenes
   * `textures/dict_16_192_64_0p5_0p2.exr`: the dictionary used in the paper,
   * `suzanne_glint*.pbrt`: scenes using our glinty BRDF.
 
