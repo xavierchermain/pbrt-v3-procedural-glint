@@ -115,6 +115,8 @@
 #include "media/grid.h"
 #include "media/homogeneous.h"
 
+#include "materials/sparkling.h"
+
 #include <map>
 #include <stdio.h>
 
@@ -576,6 +578,8 @@ std::shared_ptr<Material> MakeMaterial(const std::string &name,
         material = CreateMixMaterial(mp, mat1, mat2);
     } else if (name == "metal")
         material = CreateMetalMaterial(mp);
+    else if (name == "sparkling")
+        material = CreateSparklingMaterial(mp);
     else if (name == "substrate")
         material = CreateSubstrateMaterial(mp);
     else if (name == "uber")
